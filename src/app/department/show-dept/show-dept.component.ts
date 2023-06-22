@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/shared.service';
+
 @Component({
   selector: 'app-show-dept',
   templateUrl: './show-dept.component.html',
@@ -14,6 +15,10 @@ export class ShowDeptComponent implements OnInit{
   ActivateAddEditDeptComp:boolean=false;
   dept:any;
   dataItem:any;
+
+  DepartmentIdFilter:string="";
+  DepartmentNameFilter:string="";
+  AllDepartmentsWithoutFilter:any=[];
 
 
   ngOnInit(): void {
@@ -54,4 +59,19 @@ export class ShowDeptComponent implements OnInit{
       this.AllDepartments=data;
     });
   }
+
+  // FilterFn(){
+  //   var DepartmentIdFilter =this.DepartmentIdFilter;
+  //   var DepartmentNameFilter=this.DepartmentNameFilter;
+
+  //   this.AllDepartments = this.AllDepartmentsWithoutFilter.filter(function (e1){
+  //     return e1.DepartmentId.toString().toLowerCase().include(
+  //       DepartmentIdFilter.toString().trim().toLowerCase()
+  //     )&&
+  //     e1.DepartmentName.toString().toLowerCase().includes(
+  //       DepartmentIdFilter.toString().trim().toLowerCase()
+  //     )
+  //   });
+  // }
 }
+
